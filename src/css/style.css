@@ -1,0 +1,123 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px; /*definir a largura maxima*/
+    margin: 0 auto; /**margem auto - na esqueda e na direita*/
+}
+/*colocar a mascara no project*/
+main:after{ /*criando um pseudo elemento*/
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position:fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 
+    50%, rgba(0, 0, 0, 1) 90%);
+ /*css gradient.io - para criar o gradientes*/
+    z-index: -1;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column; /* coo row - coloca os elementos em uma linha do lado do outro - column - coluna*/
+    min-height: 100vh; /*altura minima*/
+    justify-content: space-evenly; /*espaçamento*/
+    /*flex - alinha elementos verticalmente e horizontamente e não ousar o floaut
+    --> usar o flex pensando em pai e filhos, para alinha os filhos devemos por a propriedade flex no pai*/
+} 
+
+/*conteudo, tanto da logo, quanto do texto*/
+
+.informacoes .logo{
+    max-width: 350px;
+    margin-bottom: 50px; 
+
+}
+.informacoes .descricao{
+    width: 49%; /*a % vai sempre se basear na largura do pai*/
+    font-size: 24px;
+    color: #ffffff;
+    line-height: 30px;
+}
+
+/*o carrossel - botões*/
+
+.botoes-carrossel{
+    display: flex;
+    justify-content: center; /*alinhar horizontalmente*/
+    gap: 20px; /*gap - dar separar dos px o carrossel*/
+}
+.botoes-carrossel .botao{
+    background-color: #ffffff;
+    width: 15px; /*largura*/
+    height: 15px; /*altura*/
+    border-radius: 50%; /*deixar redondo - raio da bordas*/
+    border: 2px solida transparent;
+    cursor: pointer; 
+    border-color: #ffffff;
+}
+.botoes-carrossel .botao.selecionado{
+    background-color: #dcdf28;
+}
+
+/*menu lataral*/
+
+.menu-lateral{
+    position: fixed; /*posicionamento fixo*/
+    top: 0;
+    right: 0;
+    width: 80px;
+    filter: invert(1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+} 
+
+.menu-lateral ul{ /*separar os icones defininado o display no pai pra trabalhar nos filhos*/
+    display: flex;
+    flex-direction: column;
+    gap: 15px
+}
+
+.menu-lateral .icone{
+    width: 30px;
+    transition: 0.3s ease-in-out; /*transição - suavimente*/
+}
+.menu-lateral .icone:hover{ /*hober - quando eu passar o mouse em cima ele vai fazer alguma coisa*/
+    transform: scale(1.2); /*quando passa o mouse o scale - vai aumentar o incone */
+}
+
+/*carrossel - imagens*/
+
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;  /*eixo z - profundidade colocar as imagens para traz*/
+}
+
+.carrossel .imagem{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /*vai corrigir a imagem cobrindo (cobver) todo o tamahho delas*/
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+
+.carrossel .imagem.ativa{
+    display: block;
+}
+ 
+/*cria a animação da imagems*/
+
+@keyframes mudarImagem { 
+    from{ /*o primeiro estado da animação*/
+        opacity: 0.85;
+    }to{ /**estado final*/
+        opacity: 1;
+    }
+
+}
+

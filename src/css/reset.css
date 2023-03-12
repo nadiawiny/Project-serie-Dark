@@ -1,0 +1,17 @@
+/*recetar os css que o proprio navegador traz*/
+/* seletor - nomes de class do html ou as tags como <p> <h1>*/
+
+*{
+    margin: 0; /*zerar a margem do css do navegador*/
+    padding: 0; /*zerar o espassamento interno do elemento*/
+    box-sizing: border-box; /*para tamanho das caixas no css*/
+
+}
+
+ul{
+    list-style: none; /*o estilo da lista vai ser nenhum*/
+}
+
+a{
+    text-decoration: none; /*nenhuma decoracp se texto*/
+}
