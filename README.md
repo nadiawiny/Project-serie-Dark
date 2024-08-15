@@ -25,7 +25,7 @@ aprimorar ainda mais meu conhecimento com atalhos importantes para acrescentar j
 
 ▪ Criação de gradientes;
 
-▪ O uso do desplay, flex e carrocel em botões.
+▪ O uso do display, flex e carrocel em botões.
 
 ### EM JS 
 ▪ A dinâmica da nevegação dos usuários em todo o site, nos botões de interação.
